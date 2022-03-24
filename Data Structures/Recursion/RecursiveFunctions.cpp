@@ -90,14 +90,14 @@ bool isPalindrome(std::string input, bool clearWhiteSpace) {
 
 	return false;
 }
+
 std::string DecimalToBinary(int number) {
-	if (number == 0) {
-		return "0";
+	if (number == 1) {
+		return "1";
 	}
 	auto digit = (number%2 == 0)? "0":"1";
 	return DecimalToBinary(number / 2) + digit;
 }
-
 std::string reverseString(std::string input) {
 	if (input == "" || input.size() == 1) {
 		return input;
@@ -107,7 +107,37 @@ std::string reverseString(std::string input) {
 		
 	}
 };
+int sumOfNaturalNumbers(int num) {
+	if (num == 0) {
+		return 0;
+	}
+	return sumOfNaturalNumbers(num - 1) + num;
 
+
+}
+
+int binaryArraySearch(int A[], int left, int right, int key) {
+
+	if (left > right) return -1;	//The array numbers are reversed
+
+	//Find the middle of the Array
+	int midIdx = (left + right) / 2;
+
+
+	if (A[midIdx] == key) {	//Found the key
+		return midIdx;
+	}
+
+	//If the Key is Less then middle value, shorten the top end
+	if (key < A[midIdx]) binaryArraySearch(A, left, midIdx - 1, key);
+
+	//If the Key is Greater then middle value, extend the beginning
+	return binaryArraySearch(A, midIdx + 1, right, key);
+
+
+
+
+};
 
 
 

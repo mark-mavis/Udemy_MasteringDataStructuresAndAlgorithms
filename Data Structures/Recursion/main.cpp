@@ -22,9 +22,14 @@ int main() {
 	StringA();
 	std::cout << isPalindrome("racecar", false) << std::endl;
 	std::cout << isPalindrome("x egte etg ex", true) << std::endl;
-	std::cout << DecimalToBinary(5) << std::endl;
+	std::cout << DecimalToBinary(567) << std::endl;
 
-	std::cout << reverseString("Hello");
+	std::cout << reverseString("Hello") << std::endl;
+	std::cout << sumOfNaturalNumbers(23) << std::endl;
+
+	int A[]{ -1, 0, 1, 2, 3, 4, 7, 9, 10, 20 };
+	std::cout << "Index: " << binaryArraySearch(A, 0, 9, 10) << std::endl;
+	std::cout << "Index: " << binaryArraySearch(A, 0, 9, 6) << std::endl;
 
 	return 0;
 }
