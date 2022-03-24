@@ -24,5 +24,7 @@ int main() {
 	std::cout << isPalindrome("x egte etg ex", true) << std::endl;
 	std::cout << DecimalToBinary(5) << std::endl;
 
+	std::cout << reverseString("Hello");
+
 	return 0;
 }

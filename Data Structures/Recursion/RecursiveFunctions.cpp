@@ -97,5 +97,19 @@ std::string DecimalToBinary(int number) {
 	auto digit = (number%2 == 0)? "0":"1";
 	return DecimalToBinary(number / 2) + digit;
 }
+
+std::string reverseString(std::string input) {
+	if (input == "" || input.size() == 1) {
+		return input;
+	}
+	else {
+		return reverseString(input.substr(1, input.length()-1 )) + input.at(0);
+		
+	}
+};
+
+
+
+
 #endif // !
 

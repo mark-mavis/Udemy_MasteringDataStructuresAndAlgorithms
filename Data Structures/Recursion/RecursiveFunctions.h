@@ -7,3 +7,4 @@ int RecursiveFunction_StaticVariable(int n);
 int RecursiveFunction_GlobalVariable(int n);
 bool isPalindrome(std::string input, bool clearWhiteSpace);
 std::string DecimalToBinary(int number);
+std::string reverseString(std::string input);
