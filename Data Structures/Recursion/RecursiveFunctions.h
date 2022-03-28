@@ -11,3 +11,5 @@ std::string reverseString(std::string input);
 int sumOfNaturalNumbers(int num);
 
 int binaryArraySearch(int A[], int left, int right, int key);
+
+int Fibonacci(int n);

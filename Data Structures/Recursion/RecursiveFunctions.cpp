@@ -115,7 +115,6 @@ int sumOfNaturalNumbers(int num) {
 
 
 }
-
 int binaryArraySearch(int A[], int left, int right, int key) {
 
 	if (left > right) return -1;	//The array numbers are reversed
@@ -138,6 +137,15 @@ int binaryArraySearch(int A[], int left, int right, int key) {
 
 
 };
+
+int Fibonacci(int n) {
+	if ((n == 0) || (n == 1)) {
+		return n;
+	}
+	else {
+		return Fibonacci(n - 1) + Fibonacci(n - 2);
+	}
+}
 
 
 
