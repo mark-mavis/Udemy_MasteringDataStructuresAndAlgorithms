@@ -1,4 +1,5 @@
 #include "RecursiveFunctions.h"
+#include "TreeRecursion.h"
 
 //Basic Implementation of Recursion to return a sentence
 std::string StringC() {
@@ -32,9 +33,15 @@ int main() {
 
 	int A[]{ -1, 0, 1, 2, 3, 4, 7, 9, 10, 20 };
 	std::cout << "Index: " << binaryArraySearch(A, 0, 9, 7) << std::endl;
-	//std::cout << "Index: " << binaryArraySearch(A, 0, 9, 0) << std::endl;
+	std::cout << "Index: " << binaryArraySearch(A, 0, 9, 0) << std::endl;
 
 	std::cout << Fibonacci(6) << std::endl;
+
+	/*======================================================================
+	*	Tree Recursion
+	*/
+
+	TreeRecursion(3);
 
 	return 0;
 }
