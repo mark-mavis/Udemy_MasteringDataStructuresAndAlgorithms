@@ -21,9 +21,15 @@
     <ClCompile Include="RecursiveFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TreeRecursion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RecursiveFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeRecursion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
