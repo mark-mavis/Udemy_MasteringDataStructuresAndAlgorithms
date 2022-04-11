@@ -1,5 +1,6 @@
 #include "RecursiveFunctions.h"
 #include "TreeRecursion.h"
+#include "IndirectRecursion.h"
 
 //Basic Implementation of Recursion to return a sentence
 std::string StringC() {
@@ -42,6 +43,11 @@ int main() {
 	*/
 
 	TreeRecursion(3);
+
+	/*======================================================================
+	*	Indirect Recursion
+	*/
+	FunctionA(20);
 
 	return 0;
 }
