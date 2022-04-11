@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RecursiveFunctions.cpp" />
+    <ClCompile Include="TreeRecursion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RecursiveFunctions.h" />
+    <ClInclude Include="TreeRecursion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
