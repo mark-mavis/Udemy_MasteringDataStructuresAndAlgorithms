@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="IndirectRecursion.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NestedRecursion.cpp" />
     <ClCompile Include="RecursiveFunctions.cpp" />
     <ClCompile Include="TreeRecursion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndirectRecursion.h" />
+    <ClInclude Include="NestedRecursion.h" />
     <ClInclude Include="RecursiveFunctions.h" />
     <ClInclude Include="TreeRecursion.h" />
   </ItemGroup>
