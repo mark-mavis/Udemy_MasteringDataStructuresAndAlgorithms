@@ -4,9 +4,9 @@
 #ifndef	RECURSIVEFUNCTIONS_CPP
 #define	RECURSIVEFUNCTIONS_CPP
 
-//=======================================================================
-// RECURSION
-/*
+/*=======================================================================
+*	RECURSION
+*
 *	What is a Recursive Function?
 *		- It is a function that calls itself
 *
@@ -19,7 +19,8 @@
 */
 
 //==================================================================================
-//HEAD RECURSION
+//HEAD RECURSION (Ascending)
+// This means that the recursive call is NOT the last statement call in the function
 //==================================================================================
 void RecursiveFunction_Ascending(int n) {
 	//Function that prints before the recursive function is called
@@ -28,9 +29,9 @@ void RecursiveFunction_Ascending(int n) {
 		RecursiveFunction_Ascending(n - 1);
 	}
 }
-
 //==================================================================================
-//TAIL RECURSION
+//TAIL RECURSION (Decending)
+// This means that the recursive call is the last statement call in the function
 //==================================================================================
 void RecursiveFunction_Descending(int n) {
 	//Function that prints the value of n, when the previous function call returns.
@@ -146,8 +147,6 @@ int Fibonacci(int n) {
 		return Fibonacci(n - 1) + Fibonacci(n - 2);
 	}
 }
-
-
 
 #endif // !
 
