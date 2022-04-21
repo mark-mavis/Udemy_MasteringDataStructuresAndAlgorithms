@@ -1,4 +1,6 @@
 #include "LinkedList.h"
+#include <string>
+
 int main() {
 	LinkedList linkedList;
 	linkedList.addNode(1);
@@ -13,9 +15,12 @@ int main() {
 	linkedList.search(4);
 	linkedList.search(5);
 
-	linkedList.deleteNode(3);
-	linkedList.deleteNode(2);
-	linkedList.deleteNode(1);
+	//linkedList.deleteNode(3);
+	//linkedList.deleteNode(2);
+	//linkedList.deleteNode(1);
+
+	linkedList.printListTailRecursion(linkedList.returnHead());
+	linkedList.printListHeadRecursion(linkedList.returnHead());
 
 
 

@@ -64,6 +64,21 @@ void LinkedList::deleteNode(int val) {
 	}
 };
 
+void LinkedList::printListTailRecursion(ListNode* node) {
+	
+	if (node) {
+		printf("%d\n", node->m_value);
+		printListTailRecursion(node->_next);
+	}
+}
+void LinkedList::printListHeadRecursion(ListNode* node) {
+
+	if (node) {
+		printListHeadRecursion(node->_next);
+		printf("%d\n", node->m_value);
+	}
+}
+ListNode* LinkedList::returnHead() { return head; }
 ListNode* LinkedList::traverseListToEnd() {
 	ListNode* ptr = head;
 	while (ptr->_next != NULL) {
@@ -83,6 +98,6 @@ ListNode* LinkedList::search(int val) {
 	//std::cout << "There is no node with that value" << std::endl;
 	return NULL;
 };
-//void printList() {}
+
 
 
