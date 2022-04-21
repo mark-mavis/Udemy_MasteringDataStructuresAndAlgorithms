@@ -11,10 +11,18 @@ void ListNode::setNodeVal(int val) { m_value = val; }
 LinkedList::LinkedList() { head = NULL; }
 
 void LinkedList::addNode(int val) {
+	/*	Two Cases in Adding Nodes
+	*	
+	*	Case 1: Empty List
+	*	Case 2: Non-Empty List
+	*/
+
+	/* Case 1: Empty List	*/
 	ListNode* newNode = new ListNode{ val };
 	if (head == NULL) {
 		head = newNode;
 	}
+	/* Case 2: Non-Empty List	*/
 	else {
 		ListNode* endNode = traverseListToEnd();
 		endNode->_next= newNode;
@@ -34,7 +42,7 @@ void LinkedList::deleteNode(int val) {
 	if (cur->m_value == val && prev == NULL) {
 		temp = cur;
 		head = cur->_next;
-		printf("Deleting Value %d\n", temp->m_value);
+		printf("Deleting Head Node Value %d\n", temp->m_value);
 		delete temp;
 		temp = NULL;
 	}
@@ -45,6 +53,7 @@ void LinkedList::deleteNode(int val) {
 			cur = cur->_next;
 			if (cur->m_value == val) {
 				prev->_next = cur->_next;
+				printf("Deleting Node Value %d\n", cur->m_value);
 				delete cur;
 				cur = NULL;
 			}
