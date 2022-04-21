@@ -5,12 +5,10 @@ private:
 	ListNode* _next;
 public:
 	ListNode(int val);
-
 	int getNodeVal();
 	void setNodeVal(int val);
 
-	ListNode* getNextNode();
-	void setNextNode(ListNode* node);
+	friend class LinkedList;
 };
 
 class LinkedList {
@@ -21,10 +19,10 @@ public:
 	LinkedList();
 	void addNode(int val);
 	void deleteNode(int val);
+	ListNode* traverseListToEnd();
+	ListNode* search(int val);
 	
-	ListNode* findNode(int val);
-	
-	void printList();
+	//void printList();
 
 
 
