@@ -24,4 +24,12 @@ public:
 	ListNode* returnHead();
 	ListNode* traverseListToEnd();
 	ListNode* search(int val);
+	
+	
+
+
+
+
+
+
 };
