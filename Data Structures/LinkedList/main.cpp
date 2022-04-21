@@ -14,7 +14,7 @@ int main() {
 	linkedList.search(5);
 
 	linkedList.deleteNode(3);
-	//linkedList.deleteNode(1);
+	linkedList.deleteNode(1);
 
 
 

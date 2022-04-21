@@ -21,32 +21,37 @@ void LinkedList::addNode(int val) {
 	}
 }
 void LinkedList::deleteNode(int val) {
+	/*Two cases in deleting nodes*/
+	/*
+	*	Case 1: Delete Head Node
+	*	Case 2: Delete Node from rest of list
+	*/
 	ListNode* cur = head;
 	ListNode* prev = NULL;
 	ListNode* temp;
-	while (cur != NULL) {
-		if (cur->m_value == val && prev == NULL) {
-			temp = cur;
-			head = cur->_next;
-			printf("Deleting Value %d\n", temp->m_value);
-			delete temp;
-			temp = NULL;
-		}
-		else {
+	
+	/*	First Case: Deleting the head node	*/
+	if (cur->m_value == val && prev == NULL) {
+		temp = cur;
+		head = cur->_next;
+		printf("Deleting Value %d\n", temp->m_value);
+		delete temp;
+		temp = NULL;
+	}
+	/*	Second Case: Deleting Node from rest of list	*/
+	else {
+		prev = head;
+		while (cur) {
 			cur = cur->_next;
-			prev = head;
-			while (cur->m_value != val) {
-				ListNode* temp = cur;
-				cur = cur->_next;
-				prev->_next = cur;
-				delete temp;
-				temp = NULL;
-				break;
+			if (cur->m_value == val) {
+				prev->_next = cur->_next;
+				delete cur;
+				cur = NULL;
 			}
 			else {
 				prev = prev->_next;
 			}
-		}	
+		}
 	}
 };
 
