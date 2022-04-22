@@ -63,7 +63,6 @@ void LinkedList::deleteNode(int val) {
 		}
 	}
 };
-
 void LinkedList::printListTailRecursion(ListNode* node) {
 	
 	if (node) {
@@ -78,6 +77,30 @@ void LinkedList::printListHeadRecursion(ListNode* node) {
 		printf("%d\n", node->m_value);
 	}
 }
+void LinkedList::countNodes(ListNode* node) {
+	int count{0};
+	while (node) {
+		count++;
+		node = node->_next;
+	}
+	std::cout << "Number of nodes: " << count << std::endl;
+}
+void LinkedList::sumOfNodes(ListNode* node){
+	int sum{0};
+	while (node) {
+		sum += node->m_value;
+		node = node->_next;
+	}
+	std::cout << "Sum of nodes: " << sum << std::endl;
+}
+void LinkedList::maxValueInList(ListNode* node){
+	int max{ INT32_MIN };
+	while (node) {
+		if (node->m_value > max) max = node->m_value;
+		node = node->_next;
+	}
+	std::cout << "Max Value: " << max << std::endl;
+}
 ListNode* LinkedList::returnHead() { return head; }
 ListNode* LinkedList::traverseListToEnd() {
 	ListNode* ptr = head;
@@ -90,12 +113,12 @@ ListNode* LinkedList::search(int val) {
 	ListNode* temp = head;
 	while (temp != NULL) {
 		if (temp->m_value == val) {
-			//printf("Value %d found at Address %p\n", val, temp);
+			printf("Value %d found at Address %p\n", val, temp);
 			return temp;
 		}
 		temp = temp->_next;
 	}
-	//std::cout << "There is no node with that value" << std::endl;
+	std::cout << "There is no node with that value" << std::endl;
 	return NULL;
 };
 

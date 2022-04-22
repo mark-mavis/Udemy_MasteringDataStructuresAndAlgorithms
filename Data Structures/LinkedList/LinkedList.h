@@ -21,6 +21,9 @@ public:
 	void deleteNode(int val);
 	void printListTailRecursion(ListNode* node);
 	void printListHeadRecursion(ListNode* node);
+	void countNodes(ListNode* node);
+	void sumOfNodes(ListNode* node);
+	void maxValueInList(ListNode* node);
 	ListNode* returnHead();
 	ListNode* traverseListToEnd();
 	ListNode* search(int val);

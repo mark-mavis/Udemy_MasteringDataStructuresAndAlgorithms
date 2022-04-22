@@ -21,6 +21,11 @@ int main() {
 
 	linkedList.printListTailRecursion(linkedList.returnHead());
 	linkedList.printListHeadRecursion(linkedList.returnHead());
+	linkedList.countNodes(linkedList.returnHead());
+	linkedList.sumOfNodes(linkedList.returnHead());
+	linkedList.maxValueInList(linkedList.returnHead());
+
+
 
 
 
