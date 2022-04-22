@@ -33,4 +33,6 @@ public:
 	ListNode* returnHead();
 	ListNode* traverseListToEnd();
 	ListNode* search(int val);
+	//void sortedListAscending();
+	//void sortedListDecending();
 };

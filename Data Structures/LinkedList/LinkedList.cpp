@@ -160,8 +160,30 @@ void LinkedList::maxValueInList(ListNode* node){
 	std::cout << "Max Value: " << max << std::endl;
 }
 
-ListNode* LinkedList::returnHead() { return head; }
+/*
+void LinkedList::sortedListAscending() {
+	ListNode* prev = head;
+	ListNode* cur = head;
+	for (int i = 0; i < getListCount(); i++) {
+		while (cur != NULL) {
+			cur = cur->_next;
+			if (i == 0 && prev->m_value < cur->m_value) {
+				ListNode* temp = cur->_next;
+				cur->_next = head;
+				prev->_next = temp;
+			}
+			else if (prev->m_value < cur->m_value) {
+				ListNode* temp = cur->_next;
+				cur->_next = head;
+				prev->_next = temp;
+			}
+			prev = prev->_next;
+		}
+	}
+}
+*/
 
+ListNode* LinkedList::returnHead() { return head; }
 ListNode* LinkedList::traverseListToEnd() {
 	ListNode* ptr = head;
 	while (ptr->_next != NULL) {
