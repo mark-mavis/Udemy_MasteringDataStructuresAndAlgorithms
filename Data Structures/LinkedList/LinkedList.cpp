@@ -8,8 +8,7 @@ int ListNode::getNodeVal() { return m_value; }
 void ListNode::setNodeVal(int val) { m_value = val; }
 
 //Linked List Definition
-LinkedList::LinkedList() { head = NULL; }
-
+LinkedList::LinkedList() { head = NULL; m_count = 0; }
 void LinkedList::addNode(int val) {
 	/*	Two Cases in Adding Nodes
 	*	
@@ -21,11 +20,61 @@ void LinkedList::addNode(int val) {
 	ListNode* newNode = new ListNode{ val };
 	if (head == NULL) {
 		head = newNode;
+		addListCount(newNode);
 	}
 	/* Case 2: Non-Empty List	*/
 	else {
 		ListNode* endNode = traverseListToEnd();
 		endNode->_next= newNode;
+		addListCount(newNode);
+	}
+}
+void LinkedList::addListCount(ListNode* node) { 
+	m_count++; 
+	std::cout << "\n";
+	std::cout << "Adding: " << node->m_value << std::endl;
+	std::cout << "List Count: " << getListCount() << std::endl; 
+}
+void LinkedList::subtractCount() { m_count--; }
+int LinkedList::getListCount() { return m_count; }
+
+void LinkedList::insertNodeAtPosition(int val, int position) {
+	/*	2 Cases in inserting Nodes into list at given position
+	*	1. Insert node before first position
+	*	2. Insert after given position.
+	*/
+	if (head && position >= 0 && (position <= (getListCount() + 1)) ) {	//checking for 
+		ListNode* newNode = new ListNode{ val };
+		if (position == 1) {
+			newNode->_next = head;
+			head = newNode;
+			addListCount(newNode);
+		}
+		else {
+			int count{ 1 };
+			ListNode* cur = head->_next;
+			ListNode* prev = head;
+
+			while (count < position) {
+				count++;
+				//cur = head->_next;
+				if (count < position) {
+					cur = cur->_next;
+					prev = prev->_next;
+				}else if(!cur) {
+					prev->_next = newNode;
+					addListCount(newNode);
+				}
+				else {
+					newNode->_next = cur;
+					prev->_next = newNode;
+					addListCount(newNode);
+				}
+			}
+		}
+	}
+	else {
+		std::cout << "Position does not exist or invalid negative position" << std::endl;
 	}
 }
 void LinkedList::deleteNode(int val) {
@@ -34,48 +83,57 @@ void LinkedList::deleteNode(int val) {
 	*	Case 1: Delete Head Node
 	*	Case 2: Delete Node from rest of list
 	*/
-	ListNode* cur = head;
-	ListNode* prev = NULL;
-	ListNode* temp;
-	
-	/*	First Case: Deleting the head node	*/
-	if (cur->m_value == val && prev == NULL) {
-		temp = cur;
-		head = cur->_next;
-		printf("Deleting Head Node Value %d\n", temp->m_value);
-		delete temp;
-		temp = NULL;
-	}
-	/*	Second Case: Deleting Node from rest of list	*/
-	else {
-		prev = head;
-		while (cur) {
-			cur = cur->_next;
-			if (cur->m_value == val) {
-				prev->_next = cur->_next;
-				printf("Deleting Node Value %d\n", cur->m_value);
-				delete cur;
-				cur = NULL;
-			}
-			else {
-				prev = prev->_next;
+	if (head && search(val)) {
+		ListNode* cur = head;
+		ListNode* prev = NULL;
+		ListNode* temp;
+
+		/*	First Case: Deleting the head node	*/
+		if (cur->m_value == val && prev == NULL) {
+			temp = cur;
+			head = cur->_next;
+			printf("Deleting Head Node Value %d\n", temp->m_value);
+			subtractCount();
+			delete temp;
+			temp = NULL;
+		}
+		/*	Second Case: Deleting Node from rest of list	*/
+		else {
+			prev = head;
+			while (cur) {
+				cur = cur->_next;
+				if (cur->m_value == val) {
+					prev->_next = cur->_next;
+					printf("Deleting Node Value %d\n", cur->m_value);
+					subtractCount();
+					delete cur;
+					cur = NULL;
+				}
+				else {
+					prev = prev->_next;
+				}
 			}
 		}
+	}
+	else {
+		std::cout << "Empty List Or Value Doesn't Exist!" << std::endl;
 	}
 };
 void LinkedList::printListTailRecursion(ListNode* node) {
 	
 	if (node) {
-		printf("%d\n", node->m_value);
+		printf("%d ->", node->m_value);
 		printListTailRecursion(node->_next);
+		
 	}
 }
 void LinkedList::printListHeadRecursion(ListNode* node) {
 
 	if (node) {
 		printListHeadRecursion(node->_next);
-		printf("%d\n", node->m_value);
+		printf("%d ->", node->m_value);
 	}
+	
 }
 void LinkedList::countNodes(ListNode* node) {
 	int count{0};
@@ -83,7 +141,7 @@ void LinkedList::countNodes(ListNode* node) {
 		count++;
 		node = node->_next;
 	}
-	std::cout << "Number of nodes: " << count << std::endl;
+	std::cout << "\nNumber of nodes: " << count << std::endl;
 }
 void LinkedList::sumOfNodes(ListNode* node){
 	int sum{0};
@@ -101,7 +159,9 @@ void LinkedList::maxValueInList(ListNode* node){
 	}
 	std::cout << "Max Value: " << max << std::endl;
 }
+
 ListNode* LinkedList::returnHead() { return head; }
+
 ListNode* LinkedList::traverseListToEnd() {
 	ListNode* ptr = head;
 	while (ptr->_next != NULL) {

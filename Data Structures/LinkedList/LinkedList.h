@@ -2,6 +2,7 @@
 class ListNode {
 private:
 	int m_value;
+	
 	ListNode* _next;
 public:
 	ListNode(int val);
@@ -13,11 +14,16 @@ public:
 
 class LinkedList {
 private:
+	int m_count;
 	ListNode* head;
+	void addListCount(ListNode* node);
+	void subtractCount();
+	int getListCount();
 
 public:
 	LinkedList();
 	void addNode(int val);
+	void insertNodeAtPosition(int val, int position);
 	void deleteNode(int val);
 	void printListTailRecursion(ListNode* node);
 	void printListHeadRecursion(ListNode* node);
