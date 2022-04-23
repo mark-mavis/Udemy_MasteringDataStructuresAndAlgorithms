@@ -1,6 +1,4 @@
 #pragma once
-
-/*	BINARY TREES	*/
 class Node {
 
 	int data{};
@@ -15,11 +13,23 @@ class Node {
 
 
 class BinaryTree {
-
+private:
 	Node* head;
-	int totalNodes;
+	int totalNodes{};
 
+public:
 	BinaryTree();
+	
+	Node* getHead();
+	
+	//int addNode(int val);
+	//int deleteNode(int val);
+	//Node* search(int val);
+
+	void preorderTraversal();
+	void inorderTraversal();
+	void postorderTraversal();
+
 
 
 
