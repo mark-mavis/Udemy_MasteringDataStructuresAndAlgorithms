@@ -3,7 +3,7 @@
 
 int main() {
 	LinkedList linkedList;
-	linkedList.deleteNode(3);
+	//linkedList.deleteNode(3);
 	linkedList.insertNodeAtPosition(10, 2);
 	linkedList.addNode(1);
 	linkedList.addNode(2);

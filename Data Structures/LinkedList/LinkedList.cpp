@@ -1,6 +1,7 @@
 #include "LinkedList.h"
 #include <string>
 #include <iostream>
+#include <typeinfo>
 
 //List Node Definitions
 ListNode::ListNode(int val = 0) : m_value{ val }, _next{ NULL } {}
@@ -15,16 +16,13 @@ void LinkedList::addNode(int val) {
 	*	Case 1: Empty List
 	*	Case 2: Non-Empty List
 	*/
-
-	/* Case 1: Empty List	*/
-	ListNode* newNode = new ListNode{ val };
+	ListNode* newNode = new ListNode{ val };		/* Case 1: Empty List	*/
 	if (head == NULL) {
 		head = newNode;
 		addListCount(newNode);
 	}
-	/* Case 2: Non-Empty List	*/
 	else {
-		ListNode* endNode = traverseListToEnd();
+		ListNode* endNode = traverseListToEnd();	/* Case 2: Non-Empty List	*/
 		endNode->_next= newNode;
 		addListCount(newNode);
 	}
