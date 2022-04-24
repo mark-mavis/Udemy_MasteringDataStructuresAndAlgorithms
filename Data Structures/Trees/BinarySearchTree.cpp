@@ -1,4 +1,4 @@
-#include "BinaryTrees.h"
+#include "BinarySearchTree.h"
 #include <string>
 #include <iostream>
 
@@ -10,16 +10,16 @@ Node::~Node() {
 }
 
 //Binary Tree Private Functions
-Node* BinaryTree::getNewNode(int val) {
+Node* BinarySearchTree::getNewNode(int val) {
 	Node* newNode = new Node(val);
 }
 
 //Binary Tree Public Functions
-BinaryTree::BinaryTree() : root{ NULL }, totalNodes{ 0 }{}
+BinarySearchTree::BinarySearchTree() : root{ NULL }, totalNodes{ 0 }{}
 
 
 
-bool BinaryTree::insertNode(int val) {
+bool BinarySearchTree::insertNode(int val) {
 	if (root) {			// If the head node exists
 		/*
 		Node* temp = root;

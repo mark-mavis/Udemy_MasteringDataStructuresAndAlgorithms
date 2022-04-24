@@ -13,14 +13,14 @@ public:
 	friend class BinaryTree;
 };
 
-class BinaryTree {
+class BinarySearchTree {
 private:
 	Node* root;
 	int totalNodes{};
 	Node* getNewNode(int val);
 
 public:
-	BinaryTree();
+	BinarySearchTree();
 	//~BinaryTreeDestructor();
 	
 	

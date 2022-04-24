@@ -139,10 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryTrees.h" />
+    <ClInclude Include="BinarySearchTree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryTrees.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
