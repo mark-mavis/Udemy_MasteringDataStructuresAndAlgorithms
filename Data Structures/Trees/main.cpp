@@ -1,8 +1,10 @@
-#include "BinaryTrees.h"
+#include "BinarySearchTree.h"
+#include <iostream>
 
 int main() {
-	BinaryTree BinTree;
-	BinTree.insertNode(50);
+	BinarySearchTree BinTree;
+	BinTree.SetRoot(50);
+	BinTree.insertNode(BinTree.Root(), 45);
 
 
 	return 0;

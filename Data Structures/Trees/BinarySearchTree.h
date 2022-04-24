@@ -1,34 +1,14 @@
 #pragma once
-
-class Node {
-private:
-	int data{};
-	Node* left;
-	Node* right;
-public:
-	Node();
-	Node(int val);
-	~Node();
-	
-	friend class BinaryTree;
-};
+#include "Node.h"
 
 class BinarySearchTree {
 private:
-	Node* root;
+	Node* root{};
 	int totalNodes{};
-	Node* getNewNode(int val);
-
 public:
 	BinarySearchTree();
-	//~BinaryTreeDestructor();
-	
-	
-	bool insertNode(int val);
-	//int deleteNode(int val);
-	//Node* search(int val);
 
-	void preorderTraversal();
-	void inorderTraversal();
-	void postorderTraversal();
+	Node* Root();
+	void SetRoot(int val);
+	void insertNode(Node* root, int val);
 };
