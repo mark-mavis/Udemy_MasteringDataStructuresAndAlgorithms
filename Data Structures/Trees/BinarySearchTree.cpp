@@ -7,27 +7,33 @@
 Node* BinarySearchTree::Root() { return root; }
 
 //Binary Tree Public Functions
-BinarySearchTree::BinarySearchTree() : root{ NULL }, totalNodes{ 0 }{}
+BinarySearchTree::BinarySearchTree(int val) : root{ new Node(val)}, totalNodes{0}{}
+
+
 void BinarySearchTree::SetRoot(int val) {
 	root = new Node(val);
 }
 
 void BinarySearchTree::insertNode(Node* root, int val) {
-	std::cout << root << std::endl;
+	std::cout << &root << std::endl;
 	if (root) {			// If the head node exists
 		if (val < root->data) {
 			if (root->left == NULL) {
 				Node* newNode = new Node(val);
 				root->left = newNode;
 			}
-			insertNode(root->left, val);
+			else {
+				insertNode(root->left, val);
+			}
 		}
 		else if (val > root->data) {
 			if (root->right == NULL) {
 				Node* newNode = new Node(val);
-				root->left = newNode;
+				root->right = newNode;
 			}
-			insertNode(root->right, val);
+			else {
+				insertNode(root->right, val);
+			}
 		}
 		else {
 			std::cout << "The value already exists and can not be added" << std::endl;

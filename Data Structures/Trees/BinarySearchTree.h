@@ -6,7 +6,7 @@ private:
 	Node* root{};
 	int totalNodes{};
 public:
-	BinarySearchTree();
+	BinarySearchTree(int val);
 
 	Node* Root();
 	void SetRoot(int val);
