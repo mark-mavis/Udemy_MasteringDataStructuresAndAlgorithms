@@ -1,13 +1,47 @@
 #include "BinaryTrees.h"
 #include <string>
+#include <iostream>
 
 Node::Node() : left{ NULL }, right{ NULL } {}
 Node::Node(int val = 0) : data{ val }, left{ NULL }, right{ NULL } {}
+Node::~Node() {
+	delete left;
+	delete right;
+}
 
-BinaryTree::BinaryTree() : head{ NULL }, totalNodes{ 0 }{}
+//Binary Tree Private Functions
+Node* BinaryTree::getNewNode(int val) {
+	Node* newNode = new Node(val);
+}
 
-Node* BinaryTree::getHead() { return head; }
+//Binary Tree Public Functions
+BinaryTree::BinaryTree() : root{ NULL }, totalNodes{ 0 }{}
 
-//int BinaryTree::addNode(int val) {}
+
+
+bool BinaryTree::insertNode(int val) {
+	if (root) {			// If the head node exists
+		/*
+		Node* temp = root;
+		if (val < temp->data) {
+			insertNode(node->left, val);
+		}
+		else if (val > temp->data) {
+			insertNode(node->right, val);
+		}
+		else {
+			std::cout << "The value already exists and can not be added" << std::endl;
+			return 0;
+		}
+		*/
+	}
+	else {				// If the head node doesn't exist
+		Node* newNode = new Node(val);
+		root = newNode;
+		return 1;
+	}
+}
+
+
 //int BinaryTree::deleteNode(int val) {}
 //Node* BinaryTree::search(int val) {}
