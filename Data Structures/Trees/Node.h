@@ -6,9 +6,6 @@ private:
 	Node* right;
 public:
 	Node(int val);
-	Node* Left();
-	Node* Right();
-	int Data();
 
 	friend class BinarySearchTree;
 };

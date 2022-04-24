@@ -9,6 +9,11 @@ public:
 	BinarySearchTree(int val);
 
 	Node* Root();
-	void SetRoot(int val);
-	void insertNode(Node* root, int val);
+	Node* Search(Node* root, int val);
+	void Insert(Node* root, int val);
+
+	void PreorderTraversal(Node* root);
+	void InorderTraversal(Node* root);
+	void PostorderTraversal(Node* root);
+	
 };
