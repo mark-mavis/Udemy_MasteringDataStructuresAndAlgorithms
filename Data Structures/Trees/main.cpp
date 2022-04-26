@@ -4,7 +4,6 @@
 int main() {
 	BinarySearchTree BinTree(50);
 
-
 	BinTree.Insert(BinTree.Root(), 25);
 	BinTree.Insert(BinTree.Root(), 75);
 	BinTree.Insert(BinTree.Root(), 12);
@@ -17,10 +16,7 @@ int main() {
 	BinTree.PreorderTraversal(BinTree.Root());
 	BinTree.InorderTraversal(BinTree.Root());
 	BinTree.PostorderTraversal(BinTree.Root());
-	
-
-
-	
+		
 	//Invalid Test Cases
 	//BinTree.insertNode(BinTree.Root(), 42);
 
