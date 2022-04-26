@@ -4,15 +4,17 @@
 #include <iostream>
 
 //Binary Tree Private Functions
-Node* BinarySearchTree::Root() { return root; }
+Node* BinarySearchTree::Root() const { return root; }
 
 //Binary Tree Public Functions
 BinarySearchTree::BinarySearchTree(int val) : root{ new Node(val)}, totalNodes{0}{}
 
 
-
+Node* BinarySearchTree::GetNewNode(int val) {
+	Node* newNode = new Node(val);
+	return newNode;
+}
 void BinarySearchTree::Insert(Node* root, int val) {
-	std::cout << &root << std::endl;
 	if (root) {			// If the head node exists
 		if (val < root->data) {
 			if (root->left == NULL) {
@@ -37,7 +39,7 @@ void BinarySearchTree::Insert(Node* root, int val) {
 		}
 	}
 	else {				// If the head node doesn't exist
-		root = new Node(val);
+		root = GetNewNode(val);
 	}
 }
 Node* BinarySearchTree::Search(Node* root, int val) {
@@ -65,14 +67,12 @@ void BinarySearchTree::PreorderTraversal(Node* root) {
 	PreorderTraversal(root->left);
 	PreorderTraversal(root->right);
 }
-
 void BinarySearchTree::InorderTraversal(Node* root) {
 	if (root == NULL) return;
 	PreorderTraversal(root->left);
 	printf("%d ", root->data);
 	PreorderTraversal(root->right);
 }
-
 void BinarySearchTree::PostorderTraversal(Node* root) {
 	if (root == NULL) return;
 	PreorderTraversal(root->left);

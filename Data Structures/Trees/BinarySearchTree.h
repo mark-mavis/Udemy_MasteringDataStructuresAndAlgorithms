@@ -3,12 +3,15 @@
 
 class BinarySearchTree {
 private:
-	Node* root{};
+	Node* root;
 	int totalNodes{};
+
+	Node* GetNewNode(int val);
+
 public:
 	BinarySearchTree(int val);
 
-	Node* Root();
+	Node* Root() const;
 	Node* Search(Node* root, int val);
 	void Insert(Node* root, int val);
 
