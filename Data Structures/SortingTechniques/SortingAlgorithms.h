@@ -1,5 +1,9 @@
 #pragma once
 
+int LinearSearchHelper(int* arr, int n, int key);
+void LinearSearch();
+
+
 void BubbleSort();
 void InsertionSort();
 void SelectionSort();

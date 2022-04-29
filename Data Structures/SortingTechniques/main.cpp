@@ -2,7 +2,7 @@
 
 int main() {
 
-	BubbleSort();
+	LinearSearch();
 
 	return 0;
 }
