@@ -1,7 +1,25 @@
 #include <iostream>
 #include <string>
-#include "SortingAlgorithms.h"
+#include "SearchingAlgorithms.h"
 
+int BinarySearchHelper(int* arr, int left, int right, int key) {
+	if (right >= 1) {
+		int midIdx = left + (right - left)/2;
+		printf("MidIdx: %d Value at MidIdx: %d Key: %d\n", midIdx, arr[midIdx], key);
+		if (key == arr[midIdx]) {
+			return midIdx;
+		}
+		if (key < arr[midIdx]) {
+			printf("LeftIdx: %d Left Val: %d RightIdx: %d Right Val: %d\n", left, arr[left], right, arr[right]);
+			return BinarySearchHelper(arr, left, midIdx - 1, key);
+		}
+		else {
+			printf("LeftIdx: %d Left Val: %d RightIdx: %d Right Val: %d\n", left, arr[left], right, arr[right]);
+			return BinarySearchHelper(arr, midIdx + 1, right, key);
+		}
+	}
+	return -1;
+}
 
 int LinearSearchHelper(int* arr, int size, int key) {
 	int i = 0; 
@@ -18,7 +36,8 @@ int LinearSearchHelper(int* arr, int size, int key) {
 	printf("Element not found\n");
 	return -1;
 }
-void LinearSearch() {
+
+void ArrayCreator() {
 	int size = 0;
 	int searchKey = 0;
 
@@ -37,8 +56,12 @@ void LinearSearch() {
 	std::cin >> searchKey;
 
 	LinearSearchHelper(ap, size, searchKey);
+	BinarySearchHelper(ap, 0, size-1, searchKey);
 	delete[]ap;
 }
+
+
+
 
 
 void BubbleSort() {

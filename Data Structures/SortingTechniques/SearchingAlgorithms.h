@@ -1,7 +1,11 @@
 #pragma once
 
-int LinearSearchHelper(int* arr, int n, int key);
-void LinearSearch();
+int BinarySearchHelper(int* arr, int size, int key);
+int LinearSearchHelper(int* arr, int left, int right, int key);
+
+void ArrayCreator();
+
+
 
 
 void BubbleSort();

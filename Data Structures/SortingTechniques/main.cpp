@@ -1,8 +1,8 @@
-#include "SortingAlgorithms.h"
+#include "SearchingAlgorithms.h"
 
 int main() {
 
-	LinearSearch();
+	ArrayCreator();
 
 	return 0;
 }
