@@ -1,7 +1,8 @@
 #pragma once
 
-int BinarySearchHelper(int* arr, int size, int key);
-int LinearSearchHelper(int* arr, int left, int right, int key);
+int BinarySearch(int* arr, int left, int right, int key);
+int LinearSearch(int* arr, int size, int key);
+void JumpSearch();
 
 void ArrayCreator();
 
