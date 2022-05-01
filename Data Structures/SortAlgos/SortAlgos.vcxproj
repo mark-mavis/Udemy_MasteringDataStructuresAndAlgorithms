@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d6fed22c-d7b1-422d-800d-e507ededa64d}</ProjectGuid>
-    <RootNamespace>SortingTechniques</RootNamespace>
+    <ProjectGuid>{4d468063-a421-4096-8e9e-5d28de619415}</ProjectGuid>
+    <RootNamespace>SortAlgos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>SearchAlgos</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,11 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="SearchingAlgorithms.h" />
+    <ClInclude Include="..\SortingTechniques\SortingAlgorithms.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="SearchingAlgorithms.cpp" />
+    <ClCompile Include="..\SortingTechniques\SortingAlgorithms.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
