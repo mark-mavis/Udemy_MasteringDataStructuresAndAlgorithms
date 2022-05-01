@@ -23,7 +23,7 @@ int BinarySearch(int* arr, int leftIdx, int rightIdx, int key) {
 		int midIdx = leftIdx + (rightIdx - leftIdx) / 2;
 		printf("LeftIdx: %d MidIdx: %d RightIdx: %d\n", leftIdx, midIdx, rightIdx);
 		if (key == arr[midIdx]) {
-			printf("Element found at Index: %d", midIdx);
+			printf("Element found at Index: %d\n", midIdx);
 			return midIdx;
 		}
 		if (key < arr[midIdx]) {
@@ -61,17 +61,20 @@ int JumpSearch(int* arr, int size, int key)
 
 		// If we reached next block or end of
 		// array, element is not present.
-		if (prev == min(step, size))
+		if (prev == min(step, size)) {
+			printf("Jump Search did not find element\n");
 			return -1;
+		}
 	}
 	// If element is found
 	if (arr[prev] == key) {
+		printf("Jump Search found element at Index: %d\n", prev);
 		return prev;
 	}
 	return -1;
 }
 int InterpolationSearch(int* arr, int lo, int hi, int key) {
-	int pos;
+	int pos = 0;
 
 	// Since array is sorted, an element present
 	// in array must be in range defined by corner
@@ -79,10 +82,11 @@ int InterpolationSearch(int* arr, int lo, int hi, int key) {
 
 		// Probing the position with keeping
 		// uniform distribution in mind.
-		pos = lo + (((double)(hi - lo) / (arr[hi] - arr[lo])) * (key - arr[lo]));
+		pos = lo + (((hi - lo) / (arr[hi] - arr[lo])) * (key - arr[lo]));
 
 		// Condition of target found
 		if (arr[pos] == key)
+			printf("Interpolation Search found element at Index: %d\n", pos);
 			return pos;
 
 		// If x is larger, x is in right sub array
@@ -93,19 +97,23 @@ int InterpolationSearch(int* arr, int lo, int hi, int key) {
 		if (arr[pos] > key)
 			return InterpolationSearch(arr, lo, pos - 1, key);
 	}
+	printf("Interpolation did not find element at Index: %d\n", pos);
 	return -1;
 }
-int ExponentialSearch(int* arr, int key, int size) {
+int ExponentialSearch(int* arr, int size, int key) {
 	// If x is present at first location itself
-	if (arr[0] == key)
+	if (arr[0] == key) {
+		printf("Exponential Search found element at Index: %d\n", 0);
 		return 0;
+	}
 
 	// Find range for binary search by
 	// repeated doubling
 	int i = 1;
-	while (i < size && arr[i] <= key)
+	while (i < size && arr[i] <= key) {
 		i = i * 2;
-
+	}
+		
 	//  Call binary search for the found range.
 	return BinarySearch(arr, i / 2, min(i, size - 1), key);
 }
@@ -118,7 +126,8 @@ void SearchController(int* ap, int size) {
 	LinearSearch(ap, size, searchKey);
 	BinarySearch(ap, 0, size - 1, searchKey);
 	JumpSearch(ap, size, searchKey);
-	InterpolationSearch(ap, 0, 24, searchKey);
+	InterpolationSearch(ap, 0, size-1, searchKey);
+	ExponentialSearch(ap, size, searchKey);
 }
 
 
