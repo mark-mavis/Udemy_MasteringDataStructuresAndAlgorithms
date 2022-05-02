@@ -4,11 +4,10 @@
 
 int main() {
 
-	ArrayCreator array(10);
-	array.Print();
-
-	//SelectionSort(array);
-	//BubbleSort(array);
+	ArrayCreator arr(10);
+	arr.Print();
+	
+	SelectionSort(arr);
 
 
 	return 0;
