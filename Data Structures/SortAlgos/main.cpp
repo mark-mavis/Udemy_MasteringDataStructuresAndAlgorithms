@@ -7,8 +7,8 @@ int main() {
 	ArrayCreator arr(10);
 	arr.Print();
 	
-	SelectionSort(arr);
-	BubbleSort(arr);
+	//SelectionSort(arr);
+	//BubbleSort(arr);
 
 
 	return 0;
