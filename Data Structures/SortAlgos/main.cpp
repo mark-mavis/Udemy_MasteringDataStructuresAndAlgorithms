@@ -8,6 +8,7 @@ int main() {
 	arr.Print();
 	
 	SelectionSort(arr);
+	BubbleSort(arr);
 
 
 	return 0;
