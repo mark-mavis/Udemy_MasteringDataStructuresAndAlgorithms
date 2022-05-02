@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="ArrayCreator.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
+    <ClCompile Include="BubbleSort_Recursive.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
   </ItemGroup>

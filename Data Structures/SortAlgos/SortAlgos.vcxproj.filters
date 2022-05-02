@@ -27,6 +27,9 @@
     <ClCompile Include="BubbleSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BubbleSort_Recursive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SortingAlgorithms.h">
