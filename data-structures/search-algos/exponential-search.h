@@ -1,0 +1,1 @@
+int ExponentialSearch(int* arr, int size, int key);

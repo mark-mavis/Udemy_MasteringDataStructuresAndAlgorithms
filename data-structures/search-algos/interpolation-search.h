@@ -1,0 +1,1 @@
+int InterpolationSearch(int* arr, int lo, int hi, int key);

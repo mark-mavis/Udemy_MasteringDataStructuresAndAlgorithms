@@ -1,0 +1,1 @@
+int LinearSearch(int* arr, int size, int search_key);
